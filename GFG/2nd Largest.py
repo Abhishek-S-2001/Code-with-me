@@ -1,28 +1,24 @@
 #User function Template for python3
 class Solution:
-	def print2largest(self,arr, n):
-            arr.sort(reverse = True)
-            ans = -1
-            for i in range(n):
-                if arr[i] < arr[0]:
-                    ans = arr[i]
-                    break
-            return ans
+    def getSecondLargest(self, arr):
+        # Code Here
+        arr = list(set(arr))
+        if len(arr) < 2:
+            return -1
+        arr.sort()
+        return arr[-2]
+
 
 #{ 
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-
-
-if __name__ == '__main__':
-    tc = int(input())
-    while tc > 0:
-        n = int(input())
-        arr = list(map(int, input().strip().split()))
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        arr = list(map(int, input().split()))
         ob = Solution()
-        ans = ob.print2largest(arr, n)
+        ans = ob.getSecondLargest(arr)
         print(ans)
-        tc -= 1
-
+        print("~")
 # } Driver Code Ends
